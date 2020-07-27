@@ -2,23 +2,8 @@ import React, { useMemo } from 'react';
 import { Chart } from 'react-charts';
 import moment from 'moment';
 import Box from '../Box';
+import { convertTime12to24 } from '../../helpers/dateConveter'
 import initialHourlyData from '../initialHourlyData';
-
-const convertTime12to24 = (time12h) => {
-    const prepareTime = time12h.toUpperCase();
-    const [time, modifier] = prepareTime.split(' ');
-
-    let hours = time;
-
-    if (hours === '12') {
-        hours = '00';
-    }
-
-    if (modifier === 'PM') {
-        hours = parseInt(hours, 10) + 12;
-    }
-    return Number(hours);
-};
 
 const axes = [
     {

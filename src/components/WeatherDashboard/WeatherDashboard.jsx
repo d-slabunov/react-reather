@@ -1,6 +1,6 @@
-import React, {useState, useEffect, useMemo, useCallback} from 'react';
+import React, { useCallback, useEffect, useMemo, useState } from 'react';
 import { withRouter } from 'react-router';
-import moment from 'moment';
+import { convertToMilliseconds } from '../../helpers/dateConveter';
 import Day from '../Day';
 import './styles.css';
 
@@ -27,16 +27,14 @@ const WeatherDashboard = ({ history }) => {
     return (
         <div className="weather_dashboard">
             {fiveDayForecast.map((item, i) => {
-                const dateInMilliseconds = item.dt * 1000
-                const weekDay = moment(dateInMilliseconds).utc().format("dddd");
                 return (
                     <Day
                         key={i}
-                        date={weekDay}
+                        date={convertToMilliseconds(item.dt)}
                         logo={item.weather[0].icon}
                         highTemperatures={item.temp.max}
                         lowTemperatures={item.temp.min}
-                        handleItemClick={() => handleItemClick(weekDay)}
+                        handleItemClick={() => handleItemClick(convertToMilliseconds(item.dt))}
                     />
                 )
             })}
