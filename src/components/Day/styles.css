@@ -1,0 +1,28 @@
+.item_wrapper {
+    padding: 20px;
+    flex-basis: 20%;
+    height: fit-content;
+    cursor: pointer;
+    transition: all .2s ease-in-out;
+
+}
+
+.item_wrapper:hover {
+    border-radius: 5px;
+    transform: scale(1.1);
+    background: rgb(40,93,94);
+    background: linear-gradient(56deg, rgba(40,93,94,0.8785889355742297) 5%, rgba(33,189,221,1) 100%);
+}
+
+.image {
+    width: 100px;
+}
+
+.highTemperature {
+    padding: 5px;
+    color: gray;
+}
+
+.lowTemperature {
+    padding: 5px;
+}

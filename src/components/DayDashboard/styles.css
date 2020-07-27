@@ -1,0 +1,9 @@
+.time_wrapper {
+    display: flex;
+    justify-content: space-around;
+}
+
+.time_wrapper_span {
+    border-radius: 10px;
+    box-shadow: 0 0 16px rgba(86, 10, 10, 0.1);
+}
